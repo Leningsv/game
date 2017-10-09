@@ -5,44 +5,18 @@
     </ion-title>
   </ion-navbar>
 </ion-header>
-
 <ion-content padding>
-  <ion-card>
-    <img src="img/nin-live.png"/>
-    <ion-card-content>
-      <ion-card-title>
-        Categoria
-      </ion-card-title>
-      <div style="max-height: 100px">
-        <ion-slides  direction="vertical">
-          <ion-slide>
-            <!-- <div class="swiper-zoom-container">
-              <img src="assets/img/dog.jpg">
-            </div> -->
-            <ion-label>Woof</ion-label>
-          </ion-slide>
-          <ion-slide>
-            <!-- <div class="swiper-zoom-container">
-              <img src="assets/img/cat.jpg">
-            </div> -->
-            <ion-label>Meow</ion-label>
-          </ion-slide>
-          <ion-slide>
-            <!-- <div class="swiper-zoom-container">
-              <img src="assets/img/fish.jpg">
-            </div> -->
-            <ion-label>Just keep swimming</ion-label>
-          </ion-slide>
-        </ion-slides>
-      </div>       
-      <button myitem (click)="play();">CLICK</button>
-    </ion-card-content>
-  </ion-card>
-  <ion-grid>
-    <ion-row style="max-height: 2px">
-        
-    </ion-row>
-  </ion-grid>
-    
-    
+  <div style="text-align:center;">
+      <button ion-button outline (click)="play();">Jugar</button>
+  </div>  
+  <ion-slides style="max-height: 400px" direction="vertical" zoom="true">
+    <ion-slide *ngFor="let category of categories" (click)="startGame(category);">   
+      <ion-label>
+        <ion-icon [name]="category.icon"></ion-icon> {{category.name}}
+      </ion-label>       
+      <div class="swiper-zoom-container">
+        <img [src]="category.img">
+      </div>
+    </ion-slide>          
+  </ion-slides>  
 </ion-content>
