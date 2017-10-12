@@ -6,12 +6,15 @@ import {Observable} from 'rxjs/Rx';
 import { CATEGORIES } from "../../assets/data/data.categories";
 import { Category } from "../../intefaces/category.interface";
 
+import { Page1Page } from "../index.pages";
+
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 export class HomePage implements OnInit{
   @ViewChild(Slides) slides: Slides;
+  category: Category;
   stateCategory:boolean;
   categories:Array<any>;
   intervalCategories:any;
@@ -38,8 +41,9 @@ export class HomePage implements OnInit{
     this.goToSlide(200,100);
     setTimeout(() => {
       //Stop the timer
+      this.category=this.categories[this.slides._activeIndex];
       this.intervalCategories.unsubscribe();
-    }, 5000);    
+    }, Math.random()*10000);    
   }
   startGame(category:Category){
     this.audio.pause();
@@ -47,7 +51,10 @@ export class HomePage implements OnInit{
     this.audio.load();
     this.audio.play();
     category.render=true;
-    setTimeout(()=> category.render = false, 1000);
+    setTimeout(()=> {
+      category.render = false
+      this.navCtrl.push(Page1Page);
+    }, 1000);
     console.log(category);
   }
 }

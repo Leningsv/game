@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Categoria Pregunta 1</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <ion-list radio-group [(ngModel)]="autoManufacturers">    
+      <ion-list-header>
+        Pregunta 1 - Descripcion?
+      </ion-list-header>
+    
+      <ion-item>
+        <ion-label>Opcion 1</ion-label>
+        <ion-radio value="cord"></ion-radio>
+      </ion-item>
+    
+      <ion-item>
+        <ion-label>Opcion 2</ion-label>
+        <ion-radio value="duesenberg"></ion-radio>
+      </ion-item>
+    
+      <ion-item>
+        <ion-label>Opcion 3</ion-label>
+        <ion-radio value="hudson"></ion-radio>
+      </ion-item>
+    
+      <ion-item>
+        <ion-label>Opcion 4</ion-label>
+        <ion-radio value="packard"></ion-radio>
+      </ion-item>
+    
+      <ion-item>
+        <ion-label>Opcion 5</ion-label>
+        <ion-radio value="studebaker"></ion-radio>
+      </ion-item>
+    
+    </ion-list>
+    <button ion-button block color="primary" [navPush]="page2">
+      Continuar
+    </button>
+</ion-content>
