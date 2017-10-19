@@ -6,7 +6,7 @@
   </ion-navbar>
 </ion-header>
 <ion-content padding style="background-color: #39C0D1">
-  <ion-slides style="max-height: 400px" direction="vertical" zoom="true">
+  <ion-slides style="max-height: 350px" direction="vertical" zoom="true">
     <ion-slide *ngFor="let category of categories" (click)="startGame(category);">   
       <ion-label>
         <ion-icon [name]="category.icon"></ion-icon> {{category.name}}
