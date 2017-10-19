@@ -1,14 +1,11 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>
+    <ion-title class="title">
       Juego
     </ion-title>
   </ion-navbar>
 </ion-header>
-<ion-content padding>
-  <div style="text-align:center;">
-      <button ion-button outline (click)="play();">Jugar</button>
-  </div>  
+<ion-content padding style="background-color: #39C0D1">
   <ion-slides style="max-height: 400px" direction="vertical" zoom="true">
     <ion-slide *ngFor="let category of categories" (click)="startGame(category);">   
       <ion-label>
@@ -18,5 +15,8 @@
         <img [src]="category.img">
       </div>
     </ion-slide>          
-  </ion-slides>
+  </ion-slides>  
+  <div style="text-align:center;" id="dvstart">
+    <button ion-button outline class="joystick" id="joystick" (click)="play();"></button>
+  </div>  
 </ion-content>

@@ -36,14 +36,25 @@ export class HomePage implements OnInit{
       }      
     });     
   }
+
+  updateJoystickClass(key:string) {
+    var joystick = document.getElementById('joystick');    
+    var classNames = ['joystick'];
+    classNames.push(key);
+    joystick.className = classNames.join(' ');
+  }
+
   play(){
+    this.updateJoystickClass('down');
     this.intervalCategories.unsubscribe();
     this.goToSlide(200,100);
     setTimeout(() => {
       //Stop the timer
       this.category=this.categories[this.slides._activeIndex];
       this.intervalCategories.unsubscribe();
+      this.updateJoystickClass('');
     }, Math.random()*10000);    
+    
   }
   startGame(category:Category){
     this.audio.pause();
