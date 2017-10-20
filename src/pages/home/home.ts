@@ -53,6 +53,7 @@ export class HomePage implements OnInit{
       this.category=this.categories[this.slides._activeIndex];
       this.intervalCategories.unsubscribe();
       this.updateJoystickClass('');
+      this.startGame(this.category);
     }, Math.random()*10000);    
     
   }
