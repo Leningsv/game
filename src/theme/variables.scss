@@ -79,10 +79,33 @@ $colors: (
 // http://ionicframework.com/docs/ionicons/
 
 @import "ionic.ionicons";
-
+@import url('https://fonts.googleapis.com/css?family=Lobster');
 
 // Fonts
 // --------------------------------------------------
 
 @import "roboto";
 @import "noto-sans";
+
+body{
+  font-family: 'Lobster', cursive;
+}
+
+.fondo{  
+  font-family: 'Lobster', cursive;
+  background: linear-gradient(white, #222);
+}
+
+.titulo{
+  font-family: 'Lobster', cursive;
+  font-size: 5rem!important;
+  line-height: 1;
+  text-align: center;
+  margin: 10pt 0;
+  padding: 5pt 0;
+  font-weight: 600;
+  color: transparent;
+  background: linear-gradient(yellow, red);  
+  background-clip: text;  
+  position: relative;
+}

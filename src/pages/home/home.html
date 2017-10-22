@@ -1,11 +1,9 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title class="title">
+  <h1 class="titulo">
       Juego
-    </ion-title>
-  </ion-navbar>
+  </h1>
 </ion-header>
-<ion-content padding style="background-color: #39C0D1">
+<ion-content padding class="fondo">
   <ion-slides style="max-height: 350px" direction="vertical" zoom="true">
     <ion-slide *ngFor="let category of categories" (click)="startGame(category);">   
       <ion-label>
@@ -17,6 +15,8 @@
     </ion-slide>          
   </ion-slides>  
   <div style="text-align:center;" id="dvstart">
-    <button ion-button outline class="joystick" id="joystick" (click)="play();"></button>
+    <button class="joystick" id="joystick" (click)="play();" style="border-image: none !important; left: 0px; top: 6%; position: absolute; z-index: 5; background-color: transparent;"></button>
   </div>  
+  <img src="../../assets/img/dice.png" alt="dice" style="width: 150px; right: 0px; bottom: 0px; position: absolute;">
+  <img src="../../assets/img/decks.png" alt="dice" style="width: 250px; left: 0px; bottom: 0px; position: absolute;">
 </ion-content>
